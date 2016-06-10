@@ -79,8 +79,8 @@ public class ProxyLayoutController {
 			GlobalProxyJNI.activateGlobalProxy(currentProxySetting.getText());
 		}else{
 			// 버튼을 누를 때 해당 루틴이 동작한다.
-			System.out.println("Released!");
-
+			//System.out.println("Released!");
+			proxyToggle.setText("Activate");
 			// 초기화 시키고 
 			GlobalProxyJNI.init();
 			// 우선 deactivate 를 시키고

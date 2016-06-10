@@ -16,4 +16,5 @@ public class GlobalProxyJNI {
 	public static void init(){}
 	public static native void activateGlobalProxy(String Address);
 	public static native void deactivateGlobalProxy();
+	
 }
