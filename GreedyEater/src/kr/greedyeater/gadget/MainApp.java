@@ -25,16 +25,21 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
+import javafx.stage.Modality;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.util.Duration;
+import kr.greedyeater.gadget.model.ProxySetting;
+import kr.greedyeater.gadget.view.ProxyLayoutController;
+import kr.greedyeater.gadget.view.ProxySettingDialogController;
 
 public class MainApp extends Application {
 	
 	private Stage primaryStage;
 	private BorderPane rootLayout;
 	private TabPane mainTabPane;
+	private ProxySetting mainProxy;
 	// Loading Image 
 	public static final String SPLASH_IMAGE =
 			"file:resources/images/Logo2.png";
@@ -184,12 +189,22 @@ public class MainApp extends Application {
 		initRootLayout();
 		// Initialize TabLayout and TabLayoutController
 		initTabLayout();
+		// Initialize ProxyLayout
+		initProxyLayout();
+	}
+	private void initProxyLayout(){
 		try{
-			addTabPane(loadFXMLLayout("view/ProxyLayout.fxml"), "Proxy");
+			FXMLLoader Loader = new FXMLLoader();
+			Loader.setLocation(MainApp.class.getResource("view/ProxyLayout.fxml"));
+			AnchorPane pane = Loader.load();
+			addTabPane(pane, "Proxy");
+			ProxyLayoutController controller = Loader.getController();
+			controller.setMainApp(this);
 			
 		}catch(IOException e){
 			e.printStackTrace();
 		}
+
 	}
 	private Pane loadFXMLLayout(String pathTofxml) throws IOException {
 		FXMLLoader Loader = new FXMLLoader();
@@ -203,6 +218,37 @@ public class MainApp extends Application {
 		this.mainTabPane.getTabs().add(tab);
 	}
 	
+    public boolean showProxySettingDialog(ProxySetting proxy) {
+        try {
+            // Load the fxml file and create a new stage for the popup dialog.
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(MainApp.class.getResource("view/ProxySettingDialog.fxml"));
+            AnchorPane page = (AnchorPane) loader.load();
+            
+            // Create the dialog Stage.
+            Stage dialogStage = new Stage();
+            dialogStage.setTitle("Edit Proxy");
+            dialogStage.initModality(Modality.WINDOW_MODAL);
+            dialogStage.initOwner(primaryStage);
+            
+            Scene scene = new Scene(page);
+            dialogStage.setScene(scene);
+            
+            // Set the person into the controller.
+            ProxySettingDialogController controller = loader.getController();
+            controller.setDialogStage(dialogStage);
+            controller.setProxySetting(proxy);
+            
+            // Show the dialog and wait until the user closes it
+            dialogStage.showAndWait();
+            
+            return controller.isOkClicked();
+        } catch (IOException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+    
 	public static void main(String[] args) {
 		launch(args);
 	}

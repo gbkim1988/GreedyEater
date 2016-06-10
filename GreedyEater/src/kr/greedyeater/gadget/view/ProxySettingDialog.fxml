@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="400.0" maxWidth="600.0" minHeight="400.0" minWidth="600.0" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.greedyeater.gadget.view.ProxySettingDialogController">
+   <children>
+      <Separator layoutX="30.0" layoutY="67.0" prefHeight="4.0" prefWidth="554.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" />
+      <Label layoutX="30.0" layoutY="25.0" text="Proxy Setting Dialog">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Label>
+      <ButtonBar layoutX="386.0" layoutY="330.0" prefHeight="40.0" prefWidth="200.0">
+        <buttons>
+          <Button mnemonicParsing="false" onAction="#handleOkButton" text="OK" />
+            <Button mnemonicParsing="false" onAction="#handleCancelButton" text="Cancel" />
+        </buttons>
+      </ButtonBar>
+      <Label layoutX="51.0" layoutY="110.0" text="Address:" textFill="#00bbff">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="51.0" layoutY="188.0" text="Port:" textFill="#00bbff">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="proxyField" layoutX="51.0" layoutY="145.0" prefHeight="29.0" prefWidth="321.0" />
+      <TextField fx:id="portField" layoutX="51.0" layoutY="222.0" prefHeight="29.0" prefWidth="321.0" />
+   </children>
+</AnchorPane>
