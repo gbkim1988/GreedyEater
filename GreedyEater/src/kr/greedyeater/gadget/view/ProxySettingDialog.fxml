@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="400.0" maxWidth="600.0" minHeight="400.0" minWidth="600.0" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.greedyeater.gadget.view.ProxySettingDialogController">
+<AnchorPane maxHeight="300.0" maxWidth="400.0" minHeight="300.0" minWidth="400.0" prefHeight="300.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.greedyeater.gadget.view.ProxySettingDialogController">
    <children>
       <Separator layoutX="30.0" layoutY="67.0" prefHeight="4.0" prefWidth="554.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" />
       <Label layoutX="30.0" layoutY="25.0" text="Proxy Setting Dialog">
@@ -16,23 +16,23 @@
             <Font size="28.0" />
          </font>
       </Label>
-      <ButtonBar layoutX="386.0" layoutY="330.0" prefHeight="40.0" prefWidth="200.0">
+      <ButtonBar layoutX="186.0" layoutY="246.0" prefHeight="40.0" prefWidth="200.0" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0">
         <buttons>
           <Button mnemonicParsing="false" onAction="#handleOkButton" text="OK" />
             <Button mnemonicParsing="false" onAction="#handleCancelButton" text="Cancel" />
         </buttons>
       </ButtonBar>
-      <Label layoutX="51.0" layoutY="110.0" text="Address:" textFill="#00bbff">
+      <Label layoutX="31.0" layoutY="78.0" text="Address:" AnchorPane.leftAnchor="30.0">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <Label layoutX="51.0" layoutY="188.0" text="Port:" textFill="#00bbff">
+      <Label layoutX="31.0" layoutY="150.0" text="Port:" AnchorPane.leftAnchor="30.0">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <TextField fx:id="proxyField" layoutX="51.0" layoutY="145.0" prefHeight="29.0" prefWidth="321.0" />
-      <TextField fx:id="portField" layoutX="51.0" layoutY="222.0" prefHeight="29.0" prefWidth="321.0" />
+      <TextField fx:id="proxyField" layoutX="30.0" layoutY="111.0" prefHeight="29.0" prefWidth="321.0" />
+      <TextField fx:id="portField" layoutX="30.0" layoutY="185.0" prefHeight="29.0" prefWidth="321.0" />
    </children>
 </AnchorPane>
