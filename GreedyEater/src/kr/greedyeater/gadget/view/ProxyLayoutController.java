@@ -37,7 +37,7 @@ public class ProxyLayoutController {
 	 *  The constructor.
 	 */
 	public ProxyLayoutController(){
-		
+		GlobalProxyJNI.init();
 	}
 	
 	@FXML
@@ -48,7 +48,7 @@ public class ProxyLayoutController {
 	public void setMainApp(MainApp mainApp){
 		
 		this.mainApp = mainApp;
-		System.out.println(this.mainApp.toString());
+		//System.out.println(this.mainApp.toString());
 		// Model 등록		
 	}
 	
@@ -72,17 +72,14 @@ public class ProxyLayoutController {
 			//System.out.println("Pressed!");
 			proxyToggle.setText("Deativate");
 			//초기화 시키고
-			GlobalProxyJNI.init();
-			// 우선 deactivate 를 시키고
-			GlobalProxyJNI.deactivateGlobalProxy();
 			// 지정된 주소를 통해서 
-			GlobalProxyJNI.activateGlobalProxy(currentProxySetting.getText());
+			//System.out.println(proxySetting.getProxyAddress() +":"+proxySetting.getProxyPort());
+			GlobalProxyJNI.activateGlobalProxy(proxySetting.getProxyAddress() +":"+proxySetting.getProxyPort());
 		}else{
 			// 버튼을 누를 때 해당 루틴이 동작한다.
 			//System.out.println("Released!");
 			proxyToggle.setText("Activate");
 			// 초기화 시키고 
-			GlobalProxyJNI.init();
 			// 우선 deactivate 를 시키고
 			GlobalProxyJNI.deactivateGlobalProxy();
 		}
