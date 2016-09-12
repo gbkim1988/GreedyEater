@@ -21,7 +21,7 @@
                <children>
                   <ButtonBar layoutX="61.0" layoutY="27.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="40.0" prefWidth="537.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="35.0">
                      <buttons>
-                        <Button mnemonicParsing="false" prefHeight="29.0" prefWidth="105.0" text="Listener" />
+                        <Button mnemonicParsing="false" onAction="#handleListenerButton" prefHeight="29.0" prefWidth="105.0" text="Listener" />
                         <Button mnemonicParsing="false" prefHeight="29.0" prefWidth="105.0" text="Forward" />
                         <ToggleButton mnemonicParsing="false" onAction="#hanldeToggleButton" prefHeight="27.0" prefWidth="105.0" text="Intercept" />
                         <Button mnemonicParsing="false" prefHeight="29.0" prefWidth="105.0" text="Drop" />

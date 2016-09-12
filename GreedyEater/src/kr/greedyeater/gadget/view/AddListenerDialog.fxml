@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="421.0" prefWidth="680.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.greedyeater.gadget.view.AddListenerDialogController">
+   <children>
+      <Separator layoutX="14.0" layoutY="54.0" prefWidth="200.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="54.0" />
+      <Label layoutX="14.0" layoutY="20.0" text="ADD LISTENER" textFill="#677254">
+         <font>
+            <Font name="NanumGothicBold" size="25.0" />
+         </font>
+      </Label>
+      <TableView layoutX="14.0" layoutY="100.0" prefHeight="200.0" prefWidth="493.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="100.0">
+        <columns>
+          <TableColumn prefWidth="73.0" text="Running" />
+          <TableColumn prefWidth="173.0" text="Host" />
+            <TableColumn prefWidth="100.0" text="Port" />
+            <TableColumn prefWidth="146.0" text="Activated" />
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+      <Text layoutX="14.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add Listener for Certain Interfaces. You could add several interfaces" wrappingWidth="577.4921875" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="65.0" />
+      <Button layoutX="532.0" layoutY="100.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="105.0" text="Add" AnchorPane.leftAnchor="532.0" AnchorPane.topAnchor="100.0" />
+      <Button layoutX="532.0" layoutY="140.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="105.0" text="Delete" AnchorPane.leftAnchor="532.0" AnchorPane.topAnchor="140.0" />
+      <Button layoutX="532.0" layoutY="179.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="105.0" text="Modify" AnchorPane.leftAnchor="532.0" />
+      <ButtonBar layoutX="466.0" layoutY="367.0" prefHeight="40.0" prefWidth="200.0" AnchorPane.leftAnchor="466.0" AnchorPane.topAnchor="367.0">
+        <buttons>
+          <Button mnemonicParsing="false" text="Ok" />
+            <Button mnemonicParsing="false" text="Cancel" />
+        </buttons>
+      </ButtonBar>
+      <Text fill="RED" layoutX="14.0" layoutY="337.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Caution : If you don't press &quot;OK&quot; button in this dialog, then your works will be lost" wrappingWidth="492.99998581409454" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="322.0" />
+   </children>
+</AnchorPane>

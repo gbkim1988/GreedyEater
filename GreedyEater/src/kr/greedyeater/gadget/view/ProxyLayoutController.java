@@ -84,5 +84,10 @@ public class ProxyLayoutController {
 			GlobalProxyJNI.deactivateGlobalProxy();
 		}
 	}
+	
+	@FXML
+	private void handleListenerButton(){
+		boolean isOk = this.mainApp.showAddListenerDialog();
+	}
 
 }
